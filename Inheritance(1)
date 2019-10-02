@@ -1,0 +1,23 @@
+class Pop
+{
+    public void print()
+    {
+        System.out.println("In Super class");
+    }
+}
+class Child extends Pop
+{
+    void print()
+    {
+        System.out.println("In child class");
+    }
+}
+
+class Parent
+{
+    public static void main(String args[])
+    {
+        Child c=new Child();
+        Child.print();
+    }
+}
