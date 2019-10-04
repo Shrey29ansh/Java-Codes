@@ -1,24 +1,60 @@
-class Pop
+import java.util.*;
+import java.util.Scanner; 
+
+
+class Player
 {
-    int x=10;
-    void pllo()
+    Scanner name = new Scanner(System.in);
+    String userName = name.nextLine();
+}
+class Hockey extends Player
+{
+    void trueh()
     {
-        System.out.println("x="+x);
+         System.out.println(super.userName +" plays hockey\n");
     }
 }
-class Child extends Pop
-{
-    int x=20;
-    void pllo()
+class Cricket extends Player
+{   
+    void trueh()
     {
-        System.out.println("x="+x);
+         System.out.println(super.userName +" plays Cricket\n");
     }
 }
-class Parent
+class Football extends Player
+{
+    void trueh()
+    {
+        System.out.println(super.userName +" plays Football\n");
+    }
+}
+class Main1
 {
     public static void main(String args[])
     {
-        Child c=new Child();
-        c.pllo();
+        Hockey p1 = new Hockey();
+        p1.trueh();
+        Cricket p2 = new Cricket();
+        p2.trueh();
+        Football p3 = new Football();
+        p3.trueh();
+      
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
