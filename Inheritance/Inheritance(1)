@@ -1,1 +1,25 @@
 
+class Pop
+{
+    int x=10;
+    void pllo()
+    {
+        System.out.println("x="+x);
+    }
+}
+class Child extends Pop
+{
+    int x=20;
+    void pllo()
+    {
+        System.out.println("x="+x);
+    }
+}
+class Parent
+{
+    public static void main(String args[])
+    {
+        Child c=new Child();
+        c.pllo();
+    }
+}
