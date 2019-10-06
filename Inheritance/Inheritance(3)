@@ -1,0 +1,62 @@
+import java.util.Scanner; 
+
+class Worker
+{
+    void enter()
+    {
+        System.out.println("Enter the name of the worker\n");
+        Scanner name = new Scanner(System.in);
+        String Username;
+            Username=name.nextLine();
+    }
+}
+class DailyWorker extends Worker
+{
+    void ComPay(int days)
+    {
+        System.out.println("Enter the Salary Rate as per day");
+        Scanner sal = new Scanner(System.in);
+        int salary=sal.nextInt();
+        int x =salary*days;
+        System.out.println("Wage of the week of is "+x);
+    }
+}
+class Salaried extends Worker
+{
+    void ComPay(int hours)
+    {   
+        System.out.println("Enter the Salary Rate with reference to 40 hours");
+        Scanner sala = new Scanner(System.in);
+        int salary_S=sala.nextInt();
+        float z=salary_S/40;
+        float y = z*hours;
+        System.out.println("Wage of the week of is "+y);
+    }
+}
+class Woker2
+{
+    public static void main(String args[])
+    {
+        System.out.println("Enter No. of Daily Worker and Salaried worker");
+        Scanner dwork = new Scanner(System.in);
+        int dnowor=dwork.nextInt();
+        Scanner swork = new Scanner(System.in);
+        int snowor=swork.nextInt();
+        System.out.println("This is daily worker ");
+        for(int i=1;i<=dnowor;i++)
+        {
+            System.out.println("Info of "+i+" Worker");
+            DailyWorker d1 =new DailyWorker();
+            d1.ComPay(5);  7
+            System.out.println("\n");
+        }
+        System.out.println("This is Salaried worker");
+        for(int j=1;j<=snowor;j++)
+        {
+            System.out.println("Info of "+j+"Worker");
+            Salaried s1=new Salaried();
+            s1.ComPay(60);
+            System.out.println("\n");
+        }
+    }
+}
