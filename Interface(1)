@@ -1,0 +1,17 @@
+interface In
+{
+    final int a =30;
+    void display();
+}
+class Testinterface implements In
+{
+    
+    public void display()
+    {
+        System.out.println(a);
+    }
+    public static void main(String[] arg){
+    Testinterface t1 = new Testinterface();
+    t1.display();
+    }
+}
