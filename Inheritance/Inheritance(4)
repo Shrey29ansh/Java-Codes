@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 class Trunkcall
 {
+   protected int dur;
     void Duration()
     {
         System.out.println("Enter the duration of call(in secs):");
         Scanner d =new Scanner(System.in);
-        int dur;
         dur=d.nextInt();
     }
 }
@@ -15,29 +15,29 @@ class Urgent extends Trunkcall
     void Total()
     {
         int total=30*super.dur;
+         System.out.println("Total cost in paise="+total+" paise");
     }
 }
 class Lightening extends Trunkcall
 {
      void Total()
     {
-        int total=super.dur*50;
+        int total_T=super.dur*50;
+         System.out.println("Total cost in paise="+total_T+" paise");
     }
 }
 class Ordinary extends Trunkcall
 {
      void Total()
     {
-        int total=10*super.dur;
-        System.out.println("Total cost in paise="+total+" paise");
+        int total_O=10*super.dur;
+        System.out.println("Total cost in paise="+total_O+" paise");
     }
 }
 class Trunk
 {
     public static void main(String args[])
     { 
-        Trunkcall t1=new Trunkcall();
-        t1.Duration();
         System.out.println(" Choose which type of call is it \n1.Ordinary(default)\n2.Urgent\n3.Lightening");
         Scanner x = new Scanner(System.in);
         int y=x.nextInt();
@@ -45,28 +45,23 @@ class Trunk
         {
             case 1 :
                 Ordinary O1=new Ordinary();
+                O1.Duration();
                 O1.Total();
                 break;
             case 2:
                 Urgent U1=new Urgent();
+                U1.Duration();
                 U1.Total();
                 break;
             case 3:
                 Lightening L1=new Lightening();
+                L1.Duration();
                 L1.Total();
                 break;
             default:
                 Ordinary O2=new Ordinary();
                 O2.Total();
         }
+        
     }
 }
-
-
-
-
-
-
-
-
-
