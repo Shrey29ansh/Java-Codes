@@ -1,5 +1,60 @@
-import java.util.*;
+import java.util.Scanner;
+
 class Employee
 {
-
+    protected String name;
+    protected int Empid;
+    protected double salary;
+    Employee()
+    {
+        System.out.println("We are in Default Constructor");
+        System.out.println("Enter employee name");
+        Scanner n = new Scanner(System.in);
+        name = n.nextLine();
+        System.out.println("Enter id of "+name);
+        Scanner e = new Scanner(System.in);
+        Empid = e.nextInt();
+        System.out.println("Enter salary of "+name);
+        Scanner s = new Scanner(System.in);
+        salary = s.nextDouble();
+    }
+    Employee(String username,int Empid_o,double salary_o)
+    {
+        name =username;
+        Empid = Empid_o;
+        salary=salary_o;
+        System.out.println("We are in Parametrized Constructor");
+        System.out.println("Employee name "+name+"\n");
+        System.out.println("Id of "+name+" is "+Empid+"\n");
+        System.out.println("Salary of "+name+" is "+salary+"\n");
+    }
+    double expect_o()
+    {
+        System.out.println("we are in expect");
+        return salary;
+    }
+    void increaseSalary()
+    {
+        System.out.println("Enter the percentage increase in salary\n");
+        Scanner p = new Scanner(System.in);
+        double percentage = p.nextDouble();
+        double newsal = salary*percentage/100;
+        salary=salary + newsal;
+        System.out.println("increase in salary is "+salary);
+    }
+    
+}
+class Manager extends Employee
+{
+    protected String Department;
+}
+class Emp
+{
+    public static void main(String[] args)
+    {
+        Employee E1 =new Employee();
+        E1.increaseSalary();
+        Employee E2 = new Employee("Shreynsh",5558,22.4);
+        E2.increaseSalary();
+    }
 }
