@@ -1,0 +1,19 @@
+interface test
+{
+    void square();//declaration only
+}
+class Arithmetic
+{
+    public void square()// defiantion here
+    {
+        System.out.println("You are inside the square method");
+    }
+}
+class ToTestInt
+{
+    public static void main(String args[])
+    {
+        Arithmetic A =new Arithmetic();
+        A.square();
+    }
+}
